@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import swal from 'sweetalert';
 import { Container } from 'react-bootstrap';
 import { useForm } from 'react-hook-form';
 import { useHistory } from 'react-router';
@@ -16,7 +17,11 @@ const AddNew = () => {
         axios.post('https://blooming-anchorage-75661.herokuapp.com/services', data)
             .then(res => {
                 if (res.data.insertedId) {
-                    alert('added successfully');
+                    swal({
+                        title: "Good job!",
+                        text: "You add a product!",
+                        icon: "success",
+                    });
                     reset();
                 }
             })

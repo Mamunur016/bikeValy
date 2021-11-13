@@ -1,7 +1,8 @@
 import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
-import { Col, Container, Row } from 'react-bootstrap';
+import swal from 'sweetalert';
+import { Container, } from 'react-bootstrap';
 import useAuth from '../../../Hooks/useAuth';
 
 const ManageProduct = () => {
@@ -18,21 +19,38 @@ const ManageProduct = () => {
 
     // DELETE AN USER
     const handleDeleteOrder = id => {
-        const proceed = window.confirm('Are you sure, you want to delete?');
-        if (proceed) {
-            const url = `https://blooming-anchorage-75661.herokuapp.com/services/${id}`;
-            fetch(url, {
-                method: 'DELETE'
-            })
-                .then(res => res.json())
-                .then(data => {
-                    if (data.deletedCount > 0) {
-                        alert('deleted successfully');
-                        const remainingproducts = products.filter(user => user._id !== id);
-                        setProducts(remainingproducts);
-                    }
-                });
-        }
+
+        swal({
+            title: "Are you sure?",
+            text: "Once deleted, you will not be able to recover this  file!",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+        })
+            .then((willDelete) => {
+                if (willDelete) {
+
+                    const url = `https://blooming-anchorage-75661.herokuapp.com/services/${id}`;
+                    fetch(url, {
+                        method: 'DELETE'
+                    })
+                        .then(res => res.json())
+                        .then(data => {
+                            if (data.deletedCount > 0) {
+                                swal({
+                                    title: "Good job!",
+                                    text: "deleted successfully !",
+                                    icon: "success",
+                                });
+                                const remainingproducts = products.filter(user => user._id !== id);
+                                setProducts(remainingproducts);
+                            }
+                        });
+                } else {
+                    swal("Your  file is safe!");
+                }
+            });
+
 
     }
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
+import { Container, Nav, Navbar } from 'react-bootstrap';
 import { Link, NavLink } from 'react-router-dom';
 import useAuth from '../../../Hooks/useAuth';
 
@@ -35,15 +35,7 @@ const Header = () => {
                                 (user?.email) && <NavLink to='/dashboard' className='nav-item' activeStyle={activeStyle}>Dashboard</NavLink>
                             }
 
-                            {/* {
-                                (user?.email) && <NavLink to='/myorders' className='nav-item' activeStyle={activeStyle}>MyOrders</NavLink>
-                            }
-                            {
-                                (user?.email) && <NavLink to='/manageorders' className='nav-item' activeStyle={activeStyle}>ManageOrder</NavLink>
-                            }
-                            {
-                                (user?.email) && <NavLink to='/addnew' className='nav-item' activeStyle={activeStyle}>AddNew</NavLink>
-                            } */}
+
 
 
 
@@ -53,7 +45,7 @@ const Header = () => {
                                 </div>
                             }
                             {
-                                user?.email ? <button className='btn fw-bold text-white' onClick={handleLogOut}> log Out</button> :
+                                user?.email ? <button className='btn fw-bold text-white' onClick={handleLogOut}><i class="fas fa-sign-out-alt"></i> logOut</button> :
                                     <NavLink to='/login' className='nav-item' activeStyle={activeStyle}>Log In</NavLink>
                             }
                             {

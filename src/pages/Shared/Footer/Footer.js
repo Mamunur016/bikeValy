@@ -16,13 +16,13 @@ const Footer = () => {
                         <p>BikeValy.com is the first and largest website about motorcycle in Bangladesh. We have started our journey since 25th January 2012. We have experienced and hard working team and our prime goal is to provide motorcycle related necessary information to the visitors in easy way.</p>
                     </Col>
                     <Col lg={3} md={6} sm={6} xs={12}>
-                        <h4 className='py-2'>Social Links
+                        <h4 className='py-2'>Follow Us
                         </h4>
 
                         <div>
                             <Link to='' className='nav-item-footer'>
                                 <div className='d-flex  '>
-                                    <p className="me-3"><i class="fab fa-facebook"></i></p>
+                                    <h4 className="me-3"><i class="fab fa-facebook"></i></h4>
                                     <p>Facebook</p>
                                 </div>
                             </Link>
@@ -30,7 +30,7 @@ const Footer = () => {
                         <div>
                             <Link to='' className='nav-item-footer'>
                                 <div className='d-flex  '>
-                                    <p className="me-3"><i class="fab fa-instagram"></i></p>
+                                    <h4 className="me-3"><i class="fab fa-instagram"></i></h4>
                                     <p>Instagram</p>
                                 </div>
                             </Link>
@@ -38,7 +38,7 @@ const Footer = () => {
                         <div>
                             <Link to='' className='nav-item-footer'>
                                 <div className='d-flex  '>
-                                    <p className="me-3"><i class="fab fa-twitter"></i></p>
+                                    <h4 className="me-3"><i class="fab fa-twitter"></i></h4>
                                     <p>Twitter</p>
                                 </div>
                             </Link>

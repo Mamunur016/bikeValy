@@ -3,9 +3,7 @@ import React from 'react';
 import {
 
     Switch,
-    Route,
     Link,
-
     useRouteMatch
 } from "react-router-dom";
 import useAuth from '../../../Hooks/useAuth';
@@ -53,19 +51,19 @@ const Dashboard = () => {
                                     (!admin) && <div>
                                         <li className=''>
                                             <Link to={`${url}/myorders`} className="nav-link align-middle px-0">
-                                                <i class="fas fa-th-large"></i> <span className="ms-1 d-none d-sm-inline">MyOrder</span></Link>
+                                                <i class="fas fa-shopping-cart"></i> <span className="ms-1 d-none d-sm-inline">MyOrder</span></Link>
                                         </li>
                                         <li className="">
 
 
                                             <Link to={`${url}/pay`} className="nav-link align-middle px-0">
-                                                <i class="fas fa-tachometer-alt"></i> <span className="ms-1 d-none d-sm-inline">Pay</span></Link>
+                                                <i class="fas fa-dollar-sign"></i> <span className="ms-1 d-none d-sm-inline">Pay</span></Link>
 
                                         </li>
 
                                         <li className=''>
                                             <Link to={`${url}/addreview`} className="nav-link align-middle px-0">
-                                                <i class="fas fa-th-large"></i> <span className="ms-1 d-none d-sm-inline">AddReview</span></Link>
+                                                <i class="fas fa-plus"></i> <span className="ms-1 d-none d-sm-inline">AddReview</span></Link>
                                         </li>
                                     </div>
                                 }
@@ -77,11 +75,11 @@ const Dashboard = () => {
                                         </li>
                                         <li className=''>
                                             <Link to={`${url}/makeadmin`} className="nav-link align-middle px-0">
-                                                <i class="fas fa-th-large"></i> <span className="ms-1 d-none d-sm-inline">MakeAdmin</span></Link>
+                                                <i class="far fa-address-card"></i> <span className="ms-1 d-none d-sm-inline">MakeAdmin</span></Link>
                                         </li>
                                         <li className=''>
                                             <Link to={`${url}/addnew`} className="nav-link align-middle px-0">
-                                                <i class="fas fa-th-large"></i> <span className="ms-1 d-none d-sm-inline">AddProduct</span></Link>
+                                                <i class="fas fa-plus"></i> <span className="ms-1 d-none d-sm-inline">AddProduct</span></Link>
                                         </li>
 
                                         <li className=''>
@@ -95,7 +93,14 @@ const Dashboard = () => {
                                     } */}
 
                                 {
-                                    (user?.email) && <div><button className='btn fw-bold text-white' onClick={handleLogOut}> log Out</button></div>
+                                    (user?.email) && <div>
+                                        <li className=''>
+                                            <button onClick={handleLogOut} className="nav-link align-middle px-0">
+                                                <i class="fas fa-sign-out-alt"></i>  <span className="ms-1 d-none d-sm-inline">log Out</span></button>
+                                        </li>
+
+
+                                    </div>
                                 }
 
 
@@ -108,7 +113,7 @@ const Dashboard = () => {
 
 
                     <div className="col px-0">
-                        <p className='py-3 my-0 text-white ps-2' style={{ background: "#9FE2BF" }}>Dashboard</p>
+                        <p className='py-3 my-0 text-white ps-2 bg-success' >Dashboard</p>
                         <Switch>
                             <PrivateRoute path={`${path}/myorders`} >
                                 <MyOrders></MyOrders>

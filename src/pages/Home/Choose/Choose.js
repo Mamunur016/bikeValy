@@ -57,9 +57,9 @@ const Choose = () => {
             </Container>
 
             <div style={{
-                backgroundImage: `url('http://motorbike.autoshowroom.co/wp-content/uploads/2019/12/motorcycle-1412424_1920-1024x683.jpg')`,
+                backgroundImage: `url('https://i.ibb.co/PspQtzK/fuji.jpg')`,
                 backgroundRepeat: 'no-repeat',
-                backgroundSize: '100% 100%',
+                backgroundSize: 'cover',
                 minHeight: "400px"
             }} className='d-flex align-items-center'>
                 {/* count section */}

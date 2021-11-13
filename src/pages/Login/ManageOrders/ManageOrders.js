@@ -1,7 +1,8 @@
 import React from 'react';
 import { useEffect } from 'react';
+import swal from 'sweetalert';
 import { useState } from 'react';
-import { Col, Container, Row } from 'react-bootstrap';
+import { Container } from 'react-bootstrap';
 import useAuth from '../../../Hooks/useAuth';
 
 const ManageOrders = () => {
@@ -18,21 +19,41 @@ const ManageOrders = () => {
 
     // DELETE AN USER
     const handleDeleteOrder = id => {
-        const proceed = window.confirm('Are you sure, you want to delete?');
-        if (proceed) {
-            const url = `https://blooming-anchorage-75661.herokuapp.com/orders/${id}`;
-            fetch(url, {
-                method: 'DELETE'
-            })
-                .then(res => res.json())
-                .then(data => {
-                    if (data.deletedCount > 0) {
-                        alert('deleted successfully');
-                        const remainingOrders = orders.filter(user => user._id !== id);
-                        setOrders(remainingOrders);
-                    }
-                });
-        }
+
+
+
+        swal({
+            title: "Are you sure?",
+            text: "Once deleted, you will not be able to recover this  file!",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+        })
+            .then((willDelete) => {
+                if (willDelete) {
+
+                    const url = `https://blooming-anchorage-75661.herokuapp.com/orders/${id}`;
+                    fetch(url, {
+                        method: 'DELETE'
+                    })
+                        .then(res => res.json())
+                        .then(data => {
+                            if (data.deletedCount > 0) {
+                                swal({
+                                    title: "Good job!",
+                                    text: "deleted successfully !",
+                                    icon: "success",
+                                });
+                                const remainingOrders = orders.filter(user => user._id !== id);
+                                setOrders(remainingOrders);
+                            }
+                        });
+                } else {
+                    swal("Your  file is safe!");
+                }
+            });
+
+
 
     }
 
@@ -56,7 +77,12 @@ const ManageOrders = () => {
                 .then(res => res.json())
                 .then(data => {
                     if (data.modifiedCount > 0) {
-                        alert('Update Successful');
+
+                        swal({
+                            title: "Good job!",
+                            text: "Update successfully !",
+                            icon: "success",
+                        });
                         // window.location.reload();
 
                     }

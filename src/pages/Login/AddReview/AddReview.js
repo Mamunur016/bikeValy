@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React from 'react';
+import swal from 'sweetalert';
 import { Container } from 'react-bootstrap';
 import { useForm } from 'react-hook-form';
 import useAuth from '../../../Hooks/useAuth';
@@ -15,7 +16,12 @@ const AddReview = () => {
         axios.post('https://blooming-anchorage-75661.herokuapp.com/reviews', data)
             .then(res => {
                 if (res.data.insertedId) {
-                    alert('added successfully');
+
+                    swal({
+                        title: "Good job!",
+                        text: " review added successfully !",
+                        icon: "success",
+                    })
                     reset();
                 }
             })

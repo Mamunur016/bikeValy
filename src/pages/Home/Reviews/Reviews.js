@@ -1,7 +1,7 @@
 import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
-import { Card, Carousel, Col, Container, Row } from 'react-bootstrap';
+import { Carousel, Col, Container, Row } from 'react-bootstrap';
 import Rating from 'react-rating';
 import Review from '../Review/Review';
 
@@ -16,12 +16,13 @@ const Reviews = () => {
     }, []);
 
     return (
-        <div className='news-container pb-5 pt-4 ' style={{ background: "black" }}>
+        <div className='news-container pb-5 pt-4 ' >
             <Container>
                 <h2 className='text-center text-danger py-3'>CLIENT REVIEWS</h2>
                 <h5 className='text-center text-muted py-3'>It’s always the word of mouth that’s the best advice. Here are some of our…</h5>
             </Container>
-            <Carousel className='py-5'>
+
+            <Carousel className='py-5 carousel slide' data-bs-ride="carousel">
                 {
 
 
@@ -32,8 +33,8 @@ const Reviews = () => {
                                     <Col md={4}>
                                         <div className='text-center'>
                                             <img src={review.img} alt="" style={{
-                                                width: "200px",
-                                                height: "200px",
+                                                width: "250px",
+                                                height: "220px",
                                                 borderRadius: "3px"
                                             }} />
 
@@ -41,13 +42,17 @@ const Reviews = () => {
                                     </Col>
                                     <Col md={7}>
                                         <h4 className='text-success'>{review.title}</h4>
-                                        <p className='text-white'><small>{review.description}</small></p>
-                                        <p>     <Rating readonly
-                                            initialRating={review.star}
-                                            emptySymbol="far fa-star icon-color"
-                                            fullSymbol="fas fa-star icon-color"
-                                        ></Rating></p>
-                                        <p className="text-danger">{review.name}</p>
+
+                                        <p className=''><small>{review.description.substr(0, 1000)}</small></p>
+
+                                        <p>
+                                            <Rating readonly
+                                                initialRating={review.star}
+                                                emptySymbol="far fa-star icon-color"
+                                                fullSymbol="fas fa-star icon-color"
+                                            ></Rating>
+                                        </p>
+                                        <p className="text-danger fw-bold">{review.name}</p>
                                     </Col>
 
 
@@ -64,18 +69,18 @@ const Reviews = () => {
             </Carousel>
 
             {/* <Row xl={3} lg={2} md={2} sm={1} xs={1} className='g-3'>
-                    {
+                {
 
-                        reviews.map(review => <Review
-                            review={review}
-                            key={review.id}
-                        ></Review>)
-
-
+                    reviews.map(review => <Review
+                        review={review}
+                        key={review.id}
+                    ></Review>)
 
 
-                    }
-                </Row> */}
+
+
+                }
+            </Row> */}
 
         </div >
     );
