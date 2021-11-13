@@ -32,6 +32,10 @@ const Header = () => {
 
 
                             {
+                                (user?.email) && <NavLink to='/dashboard' className='nav-item' activeStyle={activeStyle}>Dashboard</NavLink>
+                            }
+
+                            {/* {
                                 (user?.email) && <NavLink to='/myorders' className='nav-item' activeStyle={activeStyle}>MyOrders</NavLink>
                             }
                             {
@@ -39,7 +43,7 @@ const Header = () => {
                             }
                             {
                                 (user?.email) && <NavLink to='/addnew' className='nav-item' activeStyle={activeStyle}>AddNew</NavLink>
-                            }
+                            } */}
 
 
 

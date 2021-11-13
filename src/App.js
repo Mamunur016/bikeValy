@@ -3,14 +3,13 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import './App.css';
 import AuthProvider from './context/AuthProvider';
 import About from './pages/About/About';
+import Dashboard from './pages/Dashboard/Dashboard/Dashboard';
+import SideNavbar from './pages/Dashboard/DashboardHome/SideNavbar';
 import Home from './pages/Home/Home/Home';
 import AddNew from './pages/Login/AddNew/AddNew';
-import AddReview from './pages/Login/AddReview/AddReview';
 import BikeDetails from './pages/Login/BikeDetails/BikeDetails';
 import ContractUs from './pages/Login/ContractUs/ContractUs';
 import Login from './pages/Login/Login/Login';
-import ManageOrders from './pages/Login/ManageOrders/ManageOrders';
-import MyOrders from './pages/Login/MyOrders/MyOrders';
 import PrivateRoute from './pages/Login/PrivateRoute/PrivateRoute';
 import Register from './pages/Login/Register/Register';
 import ThankYou from './pages/Login/ThankYou/ThankYou';
@@ -28,7 +27,6 @@ function App() {
       <AuthProvider>
         <BrowserRouter>
 
-          <Header></Header>
 
           <Switch>
 
@@ -49,15 +47,23 @@ function App() {
             <Route path='/ourteam'>
               <OurTeam></OurTeam>
             </Route>
+            <PrivateRoute path='/dashboard'>
+              <Dashboard></Dashboard>
+            </PrivateRoute>
+            <PrivateRoute path='/sidenavbar'>
+              <SideNavbar></SideNavbar>
+            </PrivateRoute>
+
             <PrivateRoute path='/bike/:id'>
               <BikeDetails></BikeDetails>
             </PrivateRoute>
-            <PrivateRoute path='/myorders'>
+
+            {/* <PrivateRoute path='/myorders'>
               <MyOrders></MyOrders>
             </PrivateRoute>
             <PrivateRoute path='/manageorders'>
               <ManageOrders></ManageOrders>
-            </PrivateRoute>
+            </PrivateRoute> */}
 
             <PrivateRoute path='/contractus'>
               <ContractUs></ContractUs>
@@ -66,9 +72,9 @@ function App() {
             <PrivateRoute path='/addnew'>
               <AddNew></AddNew>
             </PrivateRoute>
-            <PrivateRoute path='/addreview'>
+            {/* <PrivateRoute path='/addreview'>
               <AddReview></AddReview>
-            </PrivateRoute>
+            </PrivateRoute> */}
 
             <PrivateRoute path='/thankyou'>
               <ThankYou></ThankYou>
@@ -80,11 +86,15 @@ function App() {
             <Route path='/register'>
               <Register></Register>
             </Route>
+
+
+
+
             <Route path='*'>
               <NotFound></NotFound>
             </Route>
           </Switch>
-          <Footer></Footer>
+          {/* <Footer></Footer> */}
         </BrowserRouter>
 
       </AuthProvider>

@@ -6,7 +6,7 @@ const New = ({ blog }) => {
     return (
         <div>
             <Col>
-                <Card className='p-3 border-0 shadow rounded-3 ' style={{ minHeight: "550px" }}>
+                <Card className='p-3 border-0 shadow rounded-3 ' style={{ minHeight: "650px" }}>
                     <div className=''>
                         <Card.Img variant="top" src={img} />
 
@@ -21,17 +21,7 @@ const New = ({ blog }) => {
                             <div><small>{description.substr(0, 250)}</small></div>
                         </Card.Text>
                     </Card.Body>
-                    <Card.Footer className='border-0 bg-white '>
 
-
-
-
-
-
-
-
-
-                    </Card.Footer>
                 </Card>
             </Col>
         </div>

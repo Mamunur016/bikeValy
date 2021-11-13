@@ -4,6 +4,8 @@ import { useForm } from 'react-hook-form';
 import { useHistory } from 'react-router';
 import { Link } from 'react-router-dom';
 import useAuth from '../../../Hooks/useAuth';
+import Footer from '../../Shared/Footer/Footer';
+import Header from '../../Shared/Header/Header';
 
 const ContractUs = () => {
 
@@ -15,31 +17,38 @@ const ContractUs = () => {
         history.push('/thankyou')
     };
     return (
-        <div className="bg-white py-5">
-            <Container>
-                <h1 className="text-primary pb-2">SEND US A MESSAGE</h1>
-                <h6 className='text-success pb-3'>Proactively envisioned multimedia based expertise and cross-media growth strategies. Seamlessly visualize quality intellectual capital.</h6>
+        <div>
+            <Header></Header>
+            <div className="bg-white py-5">
+                <Container>
+                    <h1 className="text-primary pb-2">SEND US A MESSAGE</h1>
+                    <h6 className='text-success pb-3'>Proactively envisioned multimedia based expertise and cross-media growth strategies. Seamlessly visualize quality intellectual capital.</h6>
 
-                <form className="appoinment-form" onSubmit={handleSubmit(onSubmit)} style={{
-                    width: "70%"
-                }}>
+                    <form className="appoinment-form" onSubmit={handleSubmit(onSubmit)} style={{
+                        width: "70%"
+                    }}>
 
-                    <input defaultValue={user.displayName} {...register("name")} className='form-control my-3' />
+                        <input defaultValue={user.displayName} {...register("name")} className='form-control my-3' />
 
-                    <input defaultValue={user.email} {...register("email", { required: true })} className='form-control my-3' />
-                    {errors.email && <span className="error">This field is required</span>}
-
-
-
-                    <input placeholder="Subject" defaultValue="" {...register("subject")} className='my-4 form-control' required />
+                        <input defaultValue={user.email} {...register("email", { required: true })} className='form-control my-3' />
+                        {errors.email && <span className="error">This field is required</span>}
 
 
-                    <textarea placeholder="leave your message" rows="5" className='my-4 form-control' defaultValue="" {...register("description")} required />
 
-                    <input type="submit" value='Contract' className='form-control my-2 btn-outline-success fw-bold' />
-                </form>
+                        <input placeholder="Subject" defaultValue="" {...register("subject")} className='my-4 form-control' required />
 
-                <Row lg={4} md={2} sm={2} xs={2} className='g-5 py-5 text-center'>
+
+                        <textarea placeholder="leave your message" rows="5" className='my-4 form-control' defaultValue="" {...register("description")} required />
+
+                        <input type="submit" value='Contract' className='form-control my-2 mb-5 btn-outline-success fw-bold' />
+                    </form>
+
+
+                </Container>
+
+            </div >
+            <div>
+                <Row lg={4} md={2} sm={2} xs={2} className='g-5 py-5 text-center text-white bg-success'>
 
 
 
@@ -72,8 +81,8 @@ const ContractUs = () => {
                         <div className='border-one'>
                             <h2><i class="far fa-envelope"></i></h2>
                             <h6>WRITE TO US</h6>
-                            <p>office@travelmate.com</p>
-                            <p> book@travelmate.com</p>
+                            <p>office@bikevaly.com</p>
+                            <p> book@bikevaly.com</p>
                         </div>
 
 
@@ -83,7 +92,7 @@ const ContractUs = () => {
                             <div>
                                 <Link to='' style={{
                                     textDecoration: "none",
-                                    color: "#212529"
+                                    color: "white"
                                 }}>
                                     <h2> <i class="fas fa-first-aid"></i></h2>
                                     <h6>BOOK AN </h6>
@@ -100,8 +109,9 @@ const ContractUs = () => {
 
 
                 </Row>
-            </Container>
-        </div >
+            </div>
+            <Footer></Footer>
+        </div>
     );
 };
 

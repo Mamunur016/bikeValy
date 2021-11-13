@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Container, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import Footer from '../../Shared/Footer/Footer';
+import Header from '../../Shared/Header/Header';
 import Banner from '../Banner/Banner';
 import Bike from '../Bike/Bike';
 import Bikes from '../Bikes/Bikes';
@@ -17,6 +19,8 @@ const Home = () => {
     }, []);
     return (
         <div >
+
+            <Header></Header>
             <Banner></Banner>
             <div className='py-5' style={{
                 background: "#E3E6E3"
@@ -46,6 +50,7 @@ const Home = () => {
             <News></News>
             <Choose></Choose>
             <Reviews></Reviews>
+            <Footer></Footer>
         </div>
     );
 };

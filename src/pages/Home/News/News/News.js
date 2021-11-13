@@ -22,7 +22,7 @@ const News = () => {
             <Container>
                 <h2 className='text-center text-primary py-3'>BikeValy MAGAZINE</h2>
                 <h5 className='text-center text-muted py-3'>Read our latest news from the company or generel news. Feel free to ask questions in comments for any news you find interesting.</h5>
-                {/* <Row xl={3} lg={2} md={2} sm={1} xs={1} className='g-3'>
+                <Row xl={3} lg={2} md={2} sm={1} xs={1} className='g-3'>
                     {
 
                         news.map(blog => <New
@@ -35,8 +35,8 @@ const News = () => {
 
 
                     }
-                </Row> */}
-                <Carousel className='py-5'>
+                </Row>
+                {/* <Carousel className='py-5'>
                     {
 
                         news.map(blog =>
@@ -77,7 +77,7 @@ const News = () => {
 
 
                     }
-                </Carousel>
+                </Carousel> */}
 
 
             </Container>
