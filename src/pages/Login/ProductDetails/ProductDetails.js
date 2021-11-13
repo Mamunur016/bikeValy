@@ -39,7 +39,7 @@ const ProductDetails = () => {
 
     }, []);
 
-    const { img, price, description, duration, title, _id, destination, included, departure } = productDetails;
+    const { img, price, description, duration, title, destination, included, departure } = productDetails;
     return (
         <div className='py-5 bg-light'>
             <Container>

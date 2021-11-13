@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Card, Col, Container, Image, Row } from 'react-bootstrap';
+import { Container, Row } from 'react-bootstrap';
 import Footer from '../../Shared/Footer/Footer';
 import Header from '../../Shared/Header/Header';
 import Member from '../Member/Member';

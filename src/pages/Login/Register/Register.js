@@ -57,13 +57,13 @@ const Register = () => {
     const registerNewUser = (email, password) => {
         createUserWithEmailAndPassword(auth, email, password)
             .then(result => {
-                const user = result.user;
+                // const user = result.user;
                 // console.log(user);
                 setError('');
                 setUserName();
                 saveUser(email, name, 'POST');
                 history.push('/home')
-                // verifyEmaill();
+
             })
             .catch((error) => {
 
@@ -79,12 +79,6 @@ const Register = () => {
             .then(result => { })
     }
 
-    // const verifyEmaill = () => {
-    //     sendEmailVerification(auth.currentUser)
-    //         .then((result) => {
-    //             console.log(result);
-    //         })
-    // }
 
 
     // sign in with google

@@ -13,6 +13,7 @@ import AdminRoute from '../../Login/AdminRoute/AdminRoute';
 import ManageOrders from '../../Login/ManageOrders/ManageOrders';
 import MyOrders from '../../Login/MyOrders/MyOrders';
 import PrivateRoute from '../../Login/PrivateRoute/PrivateRoute';
+import DashboardHome from '../DashboardHome/DashboardHome';
 import MakeAdmin from '../MakeAdmin/MakeAdmin';
 import ManageProduct from '../ManageProduct/ManageProduct';
 import Pay from '../Pay/Pay';
@@ -115,6 +116,9 @@ const Dashboard = () => {
                     <div className="col px-0">
                         <p className='py-3 my-0 text-white ps-2 bg-success' >Dashboard</p>
                         <Switch>
+                            <PrivateRoute exact path={path} >
+                                <DashboardHome></DashboardHome>
+                            </PrivateRoute>
                             <PrivateRoute path={`${path}/myorders`} >
                                 <MyOrders></MyOrders>
                             </PrivateRoute>

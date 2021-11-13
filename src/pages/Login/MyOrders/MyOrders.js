@@ -101,6 +101,8 @@ const MyOrders = () => {
         </div>
     );
 };
+
+// table component
 const Tabel = (props) => {
     const { status, price, date, model, email, _id } = props.order;
     const handleDeleteOrder = props.handleDeleteOrder;
