@@ -28,7 +28,7 @@ const Dashboard = () => {
 
     return (
         <div>
-            {/* <Router> */}
+
             <div className="container-fluid">
 
 
@@ -48,6 +48,7 @@ const Dashboard = () => {
                                     </a>
 
                                 </li>
+
                                 {
                                     (!admin) && <div>
                                         <li className=''>
@@ -89,9 +90,7 @@ const Dashboard = () => {
                                         </li>
                                     </div>
                                 }
-                                {/* {
-                                        (user?.email) ? &&  
-                                    } */}
+
 
                                 {
                                     (user?.email) && <div>
@@ -144,7 +143,7 @@ const Dashboard = () => {
                     </div>
                 </div>
             </div>
-            {/* </Router> */}
+
         </div>
     );
 };

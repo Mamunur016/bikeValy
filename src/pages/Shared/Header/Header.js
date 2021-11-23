@@ -41,7 +41,7 @@ const Header = () => {
 
                             {
                                 user?.email && <div className="d-flex justify-content-center align-items-center">
-                                    <span className='text-white'> Hello {user.displayName}</span>
+                                    <span className='text-danger fw-bold'> {user.displayName}</span>
                                 </div>
                             }
                             {
